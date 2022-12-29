@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: normal;
+  src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
+}
+
+h1 {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  color: white;
+}
+
+input {
+  border-radius: 5px;
+}
+
+input:focus{
+  outline:none;
+}
+
+.scroll {
+  height: 800px;
+  border-radius: 5px;
+  border: 1px solid white;
+  overflow-y: auto;
+  margin: 20px;
+}
