@@ -30,17 +30,17 @@ class App extends Component {
 	}	
 
 	render() {
-		if(this.state.robots.length === 0) {
-			return (
+		const { robots, searchfield } = this.state;
+		const filteredRobots = robots.filter(robot => {
+			return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+		});
+		return (!robots.length) ? 
+			(
 				<div className="tc">
 				  <h1 className="f2">Loading</h1>
-				</div>
-			)
-		} else {
-			const filteredRobots = this.state.robots.filter(robot => {
-				return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
-			});
-			return (
+				</div> 
+			) : 
+			(
 			  <div className="tc">
 				  <h1 className="f2">Robofriends</h1>
 				  <SearchBox className="shadow-5" searchChange={ this.onSearchChange }/>
@@ -49,7 +49,6 @@ class App extends Component {
 			      </Scroll>
 			  </div>
 			)
-		}
 	}
 }
 
