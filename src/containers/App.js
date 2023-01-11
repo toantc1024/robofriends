@@ -13,16 +13,16 @@ const App = () => {
 			return response.json();
 		})
 		.then(user => {
-		  setRobots(user);
+			setRobots(user);
 		});
-	}) 
+	}, []) 
 	const onSearchChange = (event) => {
 		setSearchfield(event.target.value);
 	}	
 	const filteredRobots = robots.filter(robot => {
 		return robot.name.toLowerCase().includes(searchfield.toLowerCase());
 	});
-	return (!robots.length) ? 
+	return !robots.length ? 
 			(
 				<div className="tc">
 				  <h1 className="f2">Loading</h1>
